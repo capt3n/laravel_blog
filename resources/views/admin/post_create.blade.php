@@ -44,7 +44,7 @@
 
           
             <label for="">Isi Postingan</label>
-            <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/4.9.2/tinymce.min.js" no-api-key referrerpolicy="origin"></script>
             <textarea name="body" class="form-control my-editor"></textarea><br>
             <script>
             var editor_config = {
