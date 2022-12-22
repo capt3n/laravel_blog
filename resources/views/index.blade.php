@@ -51,8 +51,8 @@
 @section('content')
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">Welcome to Ritesite</h1>
-            <p class="lead">Ritesite can solved your problem</p>
+            <h1 class="display-3">Welcome to Blog CodeQ</h1>
+            <p class="lead">CodeQ just note of system engginer, network engginer, database engginer and coder</p>
             <hr class="my-2">
             <p class="lead">
                 <a class="btn btn-primary btn-lg" href="/blog" role="button">Read A Post</a>
