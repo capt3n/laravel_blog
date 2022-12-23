@@ -30,7 +30,7 @@ a{
 
 @section('content')
     <div class="container mt-5">
-        <h2 class="title">Daftar Penulis</h2>
+        <h2 class="title">List Penulis</h2>
         <div class="row">
             @foreach ($users as $user)
             <div class="col-lg-6">
