@@ -93,25 +93,32 @@
         const container = document.querySelector('.container-portfolio')
         const jumbo = document.querySelector('.jumbo')
         const thumbs = document.querySelectorAll('.gambar')
-        container.addEventListener('click', function(e){
+		
+		
+		console.log(container); // null
 
-            if(e.target.className == 'gambar'){
-                jumbo.src = e.target.src
-                jumbo.classList.add('feid')
-                setTimeout(function(){
-                    jumbo.classList.remove('feid')
-                }, 500)
-            }
+		// ✅ Check if element exists before calling addEventListener()
+		if (container) {
+		  // Not called
+		    container.addEventListener('click', function(e){
+				if(e.target.className == 'gambar'){
+					jumbo.src = e.target.src
+					jumbo.classList.add('feid')
+					setTimeout(function(){
+						jumbo.classList.remove('feid')
+					}, 500)
+				}
 
-            thumbs.forEach(function(thumb){
-                if(thumb.classList.contains('aktif')){
-                    thumb.classList.remove('aktif')
-                }
-            })
+				thumbs.forEach(function(thumb){
+					if(thumb.classList.contains('aktif')){
+						thumb.classList.remove('aktif')
+					}
+				})
 
-            e.target.classList.add('aktif')
+				e.target.classList.add('aktif')
+			});
+		}
 
 
-        });
 </script>
 @endsection
