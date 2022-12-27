@@ -37,6 +37,7 @@
                             <li><a href="/blog" class="nav-link">Blog Page</a></li>
                             <li><a href="/penulis" class="nav-link">Author List</a></li>
                             <!-- Authentication Links -->
+						<!--
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -46,9 +47,16 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
+						
                         @else
+							-->
+						
+						@auth
                         <li class="nav-item">
                             <a href="/admin/dashboard" class="nav-link">Manage Admin</a>
+                        </li>
+						<li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -69,7 +77,7 @@
                                     <a href="/admin/user_profile" class="dropdown-item">Profile</a>
                                 </div>
                             </li>
-                        @endguest
+                        @endauth
                         </ul>
                     </div>
                 </div>
