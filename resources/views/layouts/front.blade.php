@@ -51,7 +51,9 @@
                         @else
 							-->
 						
-						@auth
+						@guest
+						
+						@else
                         <li class="nav-item">
                             <a href="/admin/dashboard" class="nav-link">Manage Admin</a>
                         </li>
@@ -79,7 +81,7 @@
                                     <a href="/admin/user_profile" class="dropdown-item">Profile</a>
                                 </div>
                             </li>
-                        @endauth
+                        @endguest
                         </ul>
                     </div>
                 </div>
