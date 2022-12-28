@@ -18,6 +18,10 @@ Route::get('/blog', 'frontController@blog');
 Route::get('/blog/category/{slug}', 'frontController@blogCategory');
 Route::get('/blog/tag/{slug}', 'frontController@blogTag');
 
+//menmabhkankan cloudinary.com
+use App\Http\Controllers\ImageController;
+Route::resource('images', ImageController::class);
+
 Auth::routes();
 
 
