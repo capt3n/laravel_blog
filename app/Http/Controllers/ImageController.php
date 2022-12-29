@@ -29,7 +29,7 @@ class ImageController extends Controller
         $image  = $request->file('image');
         $result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
         Image::create(['image' => $result]);
-        return redirect()->route('images.index')->withSuccess('berhasil upload');
+        return redirect()->route('image.index')->withSuccess('berhasil upload');
     }
 
     public function show($id)
@@ -47,13 +47,13 @@ class ImageController extends Controller
         $file   = $request->file('image');
         $result = CloudinaryStorage::replace($image->image, $file->getRealPath(), $file->getClientOriginalName());
         $image->update(['image' => $result]);
-        return redirect()->route('images.index')->withSuccess('berhasil upload');
+        return redirect()->route('image.index')->withSuccess('berhasil upload');
     }
 
     public function destroy(Image $image)
     {   
         CloudinaryStorage::delete($image->image);
         $image->delete();
-        return redirect()->route('images.index')->withSuccess('berhasil hapus');;
+        return redirect()->route('image.index')->withSuccess('berhasil hapus');;
     }
 }
