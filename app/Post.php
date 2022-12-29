@@ -26,5 +26,8 @@ class Post extends Model
     public function getPhoto(){
         return asset('/images/post_images/'.$this->photo);
     }
+	public function getPhotoUrl(){
+        return asset($this->photo);
+    }
 
 }

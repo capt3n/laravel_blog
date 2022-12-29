@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-4">
                             <a href="{{route('post.show', $post->slug)}}">
-                                <img src="{{$post->getPhoto()}}" alt="">
+                                <img src="{{$post->getPhotoUrl()}}" alt="">
                             </a>
                         </div>
                         <div class="col-8 p-2">

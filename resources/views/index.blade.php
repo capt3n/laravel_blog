@@ -66,7 +66,7 @@
                     <div class="col-lg-4">
                         <a href="{{route('post.show', $post->slug)}}">
                         <div class="card">
-                            <img src="{{$post->getPhoto()}}">
+                            <img src="{{$post->getPhotoUrl()}}">
                             <div class="card-body">
                                 <h3><strong>{{$post->title}}</strong></h3>
                                 {!! $post->body !!} <br>
