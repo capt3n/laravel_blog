@@ -19,9 +19,9 @@
                   <input type="text" name="title" id="title" value="{{$post->title}}" class="form-control" aria-describedby="post">
                   <small id="post" class="text-muted">e.g. Cara install xampp</small>
                 </div>
-
-                <div class="form-group">
-                  <label for="photo">Gambar Untuk Postingan</label>
+				
+				 <div class="form-group">
+                  <label for="">Gambar Untuk Posingan (Opsional)</label>
                   <input type="file" class="form-control-file" name="photo" id="photo" aria-describedby="fileHelpId">
                   <small id="fileHelpId" class="form-text text-muted">Masukkan gambar yang menarik perhatian</small>
                 </div>

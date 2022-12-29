@@ -43,13 +43,8 @@ class blogController extends Controller
         ]);
         if($request->hasFile('photo'))
         {
-            //$request->file('photo')->move('images/post_images/', $request->file('photo')->getClientOriginalName());
-            //$post->photo = $request->file('photo')->getClientOriginalName();
-            //$post->save();
-			
 			$image  = $request->file('photo');
 			$result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
-			//Image::create(['image' => $result]);
 			$post->photo = $result;
 			$post->save();
         }
@@ -101,18 +96,18 @@ class blogController extends Controller
     {
         $update = Post::find($id);
         $update->tags()->sync($request->tag_id);
-		
-		if($request->hasFile('photo'))
+		$requestData = $request->all();
+	 	if($request->hasFile('photo'))
         {
-			
 			$image  = $request->file('photo');
 			$result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
-			//Image::create(['image' => $result]);
-			$update->photo = "hasil_update.jpg";
-        }
-		$update->photo = "hasil_update2.jpg";
-        $update->update($request->all());
-        return redirect('/admin/dashboard');
+			$requestData['photo'] = $result;
+        }else{
+			$requestData['photo'] = "https://res.cloudinary.com/drliclrj8/image/upload/v1672307344/tutorial/undraw_walk_in_the_city_1ma6_jeolav.png";
+		}
+		
+        $update->update($requestData);
+		return redirect('/admin/dashboard');
     }
 
     /**
