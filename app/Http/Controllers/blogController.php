@@ -101,6 +101,20 @@ class blogController extends Controller
     {
         $update = Post::find($id);
         $update->tags()->sync($request->tag_id);
+		
+		if($request->hasFile('photo'))
+        {
+            //$request->file('photo')->move('images/post_images/', $request->file('photo')->getClientOriginalName());
+            //$post->photo = $request->file('photo')->getClientOriginalName();
+            //$post->save();
+			
+			$image  = $request->file('photo');
+			$result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
+			//Image::create(['image' => $result]);
+			$update->photo = $result;
+			//$post->save();
+        }
+		
         $update->update($request->all());
         return redirect('/admin/dashboard');
     }
