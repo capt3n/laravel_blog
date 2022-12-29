@@ -110,7 +110,7 @@ class blogController extends Controller
 			//Image::create(['image' => $result]);
 			$update->photo = "hasil_update.jpg";
         }
-		
+		$update->photo = "hasil_update2.jpg";
         $update->update($request->all());
         return redirect('/admin/dashboard');
     }
