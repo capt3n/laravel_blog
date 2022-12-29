@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
+use App\Models\Image;
 use Illuminate\Http\Request;
+//Tambahkan controller CloudinaryStorage
 use App\Http\Controllers\CloudinaryStorage;
 
 class ImageController extends Controller
@@ -13,27 +14,16 @@ class ImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+	public function index()
     {
-		return view('list_image', ['images' => Image::get()]);
+        return view('list_image', ['images' => Image::get()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         return view('upload_create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $image  = $request->file('image');
@@ -42,35 +32,16 @@ class ImageController extends Controller
         return redirect()->route('images.index')->withSuccess('berhasil upload');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Image $image)
+    public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Image $image)
     {
-       return view('upload_update', compact('image'));
+        return view('upload_update', compact('image'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Image $image)
     {
         $file   = $request->file('image');
@@ -79,14 +50,8 @@ class ImageController extends Controller
         return redirect()->route('images.index')->withSuccess('berhasil upload');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Image  $image
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Image $image)
-    {
+    {   
         CloudinaryStorage::delete($image->image);
         $image->delete();
         return redirect()->route('images.index')->withSuccess('berhasil hapus');;

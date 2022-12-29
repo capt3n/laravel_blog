@@ -10,17 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
+//use App\Http\Controllers\ImageController;
 
 Route::get('/', 'frontController@index');
+Route::get('/video', 'VideoController@index');
 Route::get('/penulis', 'frontController@penulis');
 Route::get('/penulis/{id}', 'frontController@penulisShow');
 Route::get('/blog', 'frontController@blog');
 Route::get('/blog/category/{slug}', 'frontController@blogCategory');
 Route::get('/blog/tag/{slug}', 'frontController@blogTag');
 
-//menmabhkankan cloudinary.com
-use App\Http\Controllers\ImageController;
-Route::resource('images', ImageController::class);
+Route::resource('image', ImageController::class);
+//Route::resource('image', ImageController::class);
+//Route::get('/image' , [ImageController::class,'index']);
+
 
 Auth::routes();
 

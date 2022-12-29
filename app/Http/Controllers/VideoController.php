@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
+use App\Image;
+use App\Http\Controllers\CloudinaryStorage;
 
 class VideoController extends Controller
 {
