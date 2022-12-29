@@ -77,7 +77,7 @@
                                 <div class="col-4">
                                     <img src="{{$post->getPhotoUrl()}}" alt="">
                                 </div>
-                                <div class="col-8 p-2">
+                                <div class="col-8 p-1">
                                     <div class="body">
                                         <h2><strong>{{$post->title}}</strong></h2>
                                         {!! $post->body !!}
