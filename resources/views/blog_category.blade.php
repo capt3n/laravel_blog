@@ -18,7 +18,7 @@
         
         .box-post img{
             width: 100%;
-            padding: 20px;  
+            padding: 15px;  
         }
         .body{
             height: 100px;
@@ -77,12 +77,11 @@
                                 <div class="col-4">
                                     <img src="{{$post->getPhotoUrl()}}" alt="">
                                 </div>
-                                <div class="col-8 p-1">
+                                <div class="col-8 p-2">
                                     <div class="body">
-                                        <h2><strong>{{$post->title}}</strong></h2>
-                                        {!! $post->body !!}
+                                        <h3><strong>{{$post->title}}</strong></h3>
+                                        <p>{!! substr($post->body, 0, 250) !!}</p>
                                     </div>
-                                
                                     <div class="foot mt-3">
                                         <span>Kategori : <strong>{{$post->category->category_name}}</strong></span><br>
                                         @foreach ($post->tags as $tagPost)
