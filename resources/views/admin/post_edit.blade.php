@@ -7,7 +7,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            <h4>Postingan Baru</h4>    
+            <h4>Postingan Blog</h4>    
         </div>    
         <div class="card-body">
             <form action="{{route('post.update', $post->id)}}" method="post" enctype="multipart/form-data">

@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Category;
 use App\Tag;
 use App\Post;
+//CloudinaryStorage
+use App\Models\Image;
+use App\Http\Controllers\CloudinaryStorage;
 
 class blogController extends Controller
 {
@@ -39,9 +43,15 @@ class blogController extends Controller
         ]);
         if($request->hasFile('photo'))
         {
-            $request->file('photo')->move('images/post_images/', $request->file('photo')->getClientOriginalName());
-            $post->photo = $request->file('photo')->getClientOriginalName();
-            $post->save();
+            //$request->file('photo')->move('images/post_images/', $request->file('photo')->getClientOriginalName());
+            //$post->photo = $request->file('photo')->getClientOriginalName();
+            //$post->save();
+			
+			$image  = $request->file('photo');
+			$result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
+			//Image::create(['image' => $result]);
+			$post->photo = $result;
+			$post->save();
         }
         $post->tags()->sync($request->tag_id);
 
