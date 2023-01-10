@@ -15,7 +15,7 @@ use App\User;
 class frontController extends Controller
 {
     public function index(){
-        $posts = Post::where('isPublished', 1)->paginate(6);
+        $posts = Post::where('isPublished', 1)->orderBy('id', 'desc')->paginate(6);
         return view('index', compact('posts'));
     }
 
@@ -32,14 +32,14 @@ class frontController extends Controller
     public function blog(){
         $categories = Category::all();
         $tags = Tag::all();
-        $posts = Post::where('isPublished', 1)->paginate(3);
+        $posts = Post::where('isPublished', 1)->orderBy('id', 'desc')->paginate(5);
         return view('blog', compact('categories', 'tags', 'posts'));
     }
 
     public function blogCategory($slug){
         $categories = Category::all();
         $tags = Tag::all();
-        $posts = Category::where('slug', $slug)->first();
+        $posts = Category::where('slug', $slug)->orderBy('id', 'desc')->first();
         // dd($posts);
         return view('blog_category', compact('categories', 'tags', 'posts'));
     }
@@ -47,7 +47,7 @@ class frontController extends Controller
     public function blogTag($slug){
         $categories = Category::all();
         $tags = Tag::all();
-        $posts = Tag::where('slug', $slug);
+        $posts = Tag::where('slug', $slug)->first();
         // dd($posts);
         return view('blog_tag', compact('categories', 'tags', 'posts'));
     }

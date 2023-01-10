@@ -71,16 +71,17 @@
             <div class="row">
                 <div class="col-lg-9">
                     @foreach ($posts->posts as $post)
-                    <a href="{{route('post.show', $post->slug)}}">
+                   
                         <div class="box-post">
                             <div class="row">
                                 <div class="col-4">
-                                    <img src="{{$post->getPhoto()}}" alt="">
+                                    <img src="{{$post->getPhotoUrl()}}" alt="">
                                 </div>
                                 <div class="col-8 p-2">
                                     <div class="body">
-                                        <h2><strong>{{$post->title}}</strong></h2>
-                                        {!! $post->body !!}
+                                         <a href="{{route('post.show', $post->slug)}}"><h2><strong>{{$post->title}}</strong></h2></a>
+                                        <!--{!! $post->body !!}-->
+										{!! Str::limit($post->body, 130) !!}
                                     </div>
                                 
                                     <div class="foot mt-3">
@@ -92,7 +93,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    
                     @endforeach
                     
                     @if ($posts->posts()->paginate(3)->currentpage() == 1)
@@ -125,8 +126,9 @@
                         @foreach ($tags as $tag)
                         <a href="/blog/tag/{{$tag->slug}}">#{{$tag->tag_name}}</a>
                         @endforeach 
-                </div>
-            </div>
-        </div>
+					</div>
+				</div>
+			</div>
+		</div>
         @endsection
         

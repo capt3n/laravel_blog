@@ -35,10 +35,20 @@
         <div class="box mt-3">
             <div class="box-head">
                 <h1 class="text-uppercase"><strong>{{$post->title}}</strong></h1>
-                <div class="text-muted" style="font-size: 12px; width: 15%; !important">
-                <span style="font-size: 10px;">Ditulis Oleh:</span>
-                <a href=""><p>{{$post->user->name}}</p></a>
-                </div>
+				<div class="row container">
+					<div class="coll text-muted col-lg-2 col-sm-4" style="font-size: 12px;">
+					<span style="font-size: 10px;">Ditulis Oleh:</span>
+					<a href=""><p>{{$post->user->name}}</p></a>
+					</div>
+					<div class="coll text-muted col-lg-2 col-sm-4" style="font-size: 12px;">
+					<span style="font-size: 10px;">Tgl Posting:</span>
+					<a href=""><p>{{$post->created_at}}</p></a>
+					</div>
+					<div class="coll text-muted col-lg-2 col-sm-4" style="font-size: 12px;">
+					<span style="font-size: 10px;">Tgl Updated:</span>
+					<a href=""><p>{{$post->updated_at}}</p></a>
+					</div>
+				</div>
             </div>
 
             <div class="box-body text-justify">

@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-    Blog ME!
+    Blog Note-IT
 @endsection
 @section('style')    
 <style>
@@ -51,7 +51,7 @@
 @section('content')
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">Welcome to Blog CodeQ</h1>
+            <h1 class="display-3">Welcome to Blog Note-IT</h1>
             <p class="lead">CodeQ just note of system engginer, network engginer, database engginer and coder</p>
             <hr class="my-2">
             <p class="lead">
@@ -82,6 +82,16 @@
                     </div>
                     @endforeach
                 </div>
+				<div class="row">
+				<div class="mx-auto">
+				  <a href="/blog" class="mt-4 btn btn-info">First Page</a>
+					<a href="/blog?page={{$posts->currentPage() - 1}}" class="mt-4 btn btn-info">Back</a>                    
+			   
+
+					<a href="/blog?page={{$posts->currentPage() + 1}}" class="mt-4 btn btn-info">Next</a>
+					<a href="/blog?page={{$posts->lastPage()}}" class="mt-4 btn btn-info">Last Page</a>
+				</div>
+				</div>
             </div>
         </div>
 

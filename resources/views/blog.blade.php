@@ -1,6 +1,6 @@
 @extends('layouts.front')
 @section('title')
-    Blog
+    Blog Note-IT
 @endsection
 
 @section('style')    
@@ -76,7 +76,7 @@
                         </div>
                         <div class="col-8 p-2">
                             <div class="body">
-                                <h2><strong>{{$post->title}}</strong></h2>
+                                <a href="{{route('post.show', $post->slug)}}"><h2><strong>{{$post->title}}</strong></h2> </a>
                                 {!! $post->body !!}
                             </div>
                         
@@ -90,18 +90,15 @@
                     </div>
                 </div>
                 @endforeach
-                @if ($posts->currentpage() == 1)
-                    
-                @else
+		
+         
                 <a href="/blog" class="mt-4 btn btn-info">First Page</a>
                 <a href="/blog?page={{$posts->currentPage() - 1}}" class="mt-4 btn btn-info">Back</a>                    
-                @endif
-                @if ($posts->currentPage() <= $posts->perPage())
-                    
-                @else
+           
+
                 <a href="/blog?page={{$posts->currentPage() + 1}}" class="mt-4 btn btn-info">Next</a>
                 <a href="/blog?page={{$posts->lastPage()}}" class="mt-4 btn btn-info">Last Page</a>
-                @endif
+            
             </div>
 
             <div class="col-lg-3">

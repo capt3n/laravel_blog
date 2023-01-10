@@ -11,6 +11,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{{ asset('css/prism.css') }}">
         @yield('style')
     
     </head>
@@ -19,7 +20,7 @@
             <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
                 <div class="container">
                     <a class="navbar-brand" href="/">
-                        Home
+                        <img src="/images/note_logo.png" alt="Home Note" height="36"> Home Note
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
@@ -34,7 +35,7 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             
-                            <li><a href="/blog" class="nav-link">KodeQ Blog</a></li>
+                            <li><a href="/blog" class="nav-link">Blog List</a></li>
                             <li><a href="/penulis/2" class="nav-link">Profil</a></li>
                             <!-- Authentication Links -->
                         @guest
@@ -50,7 +51,7 @@
 						-->
                         @else
                         <li class="nav-item">
-                            <a href="/admin/dashboard" class="nav-link">Manage Admin</a>
+                            <a href="/admin/dashboard" class="nav-link">Admin</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -82,6 +83,7 @@
             </div>
         </div>
     <script src="{{asset('js/jquery.js')}}"></script>
+	<script src="{{asset('js/prism.js')}}"></script>
     @yield('script')
     </body>
 </html>

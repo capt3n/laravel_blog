@@ -36,7 +36,7 @@ class adminController extends Controller
         if($request->has('search')){
             $posts = Post::where('user_id', Auth::user()->id)->where('title', 'LIKE', '%'.$request->search.'%')->orderBy('isPublished', 'asc')->paginate(8);
         }else{
-            $posts = Post::where('user_id', Auth::user()->id)->orderBy('isPublished', 'asc')->paginate(8);
+            $posts = Post::where('user_id', Auth::user()->id)->orderBy('id', 'desc')->paginate(8);
         }
 
         return view('admin.home', compact('categories', 'tags', 'posts'));

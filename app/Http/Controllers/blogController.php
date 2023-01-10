@@ -40,6 +40,7 @@ class blogController extends Controller
             'title' => $request->title,
             'slug' => str_slug($request->title, '-'),
             'body' => $request->body,
+			'photo' => "https://res.cloudinary.com/drliclrj8/image/upload/v1672311828/tutorial/2022-12-29_110346_free-images-for-blog.png",
         ]);
         if($request->hasFile('photo'))
         {
@@ -102,9 +103,10 @@ class blogController extends Controller
 			$image  = $request->file('photo');
 			$result = CloudinaryStorage::upload($image->getRealPath(), $image->getClientOriginalName()); 
 			$requestData['photo'] = $result;
-        }else{
+        }
+		/* 		else{
 			$requestData['photo'] = "https://res.cloudinary.com/drliclrj8/image/upload/v1672307344/tutorial/undraw_walk_in_the_city_1ma6_jeolav.png";
-		}
+		} */
 		
         $update->update($requestData);
 		return redirect('/admin/dashboard');

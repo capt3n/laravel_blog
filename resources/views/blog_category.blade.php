@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="col-lg-9">
                     @foreach ($posts->posts as $post)
-                    <a href="{{route('post.show', $post->slug)}}">
+                    
                         <div class="box-post">
                             <div class="row">
                                 <div class="col-4">
@@ -79,8 +79,8 @@
                                 </div>
                                 <div class="col-8 p-2">
                                     <div class="body">
-                                        <h3><strong>{{$post->title}}</strong></h3>
-                                        <p>{!! substr($post->body, 0, 250) !!}</p>
+                                        <a href="{{route('post.show', $post->slug)}}"><h3><strong>{{$post->title}}</strong></h3></a>
+										{!! Str::limit($post->body, 130) !!}
                                     </div>
                                     <div class="foot mt-3">
                                         <span>Kategori : <strong>{{$post->category->category_name}}</strong></span><br>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
+                    
                     @endforeach
                     
                     @if ($posts->posts()->paginate(3)->currentpage() == 1)
