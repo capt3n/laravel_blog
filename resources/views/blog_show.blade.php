@@ -31,7 +31,7 @@
 
 </style>
 @section('content')
-    <div class="container justify-content-center">
+    <div class="container justify-content-center pt-5">
         <div class="box mt-3">
             <div class="box-head">
                 <h1 class="text-uppercase"><strong>{{$post->title}}</strong></h1>

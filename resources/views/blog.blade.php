@@ -59,12 +59,27 @@
         box-shadow: 0 2px 4px rgba(120, 120, 120, 0.3);
         border-radius: 10px;
     }
+	
+	/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 344px) {  
+  h2 {font-size:0.9rem;} /*1rem = 15px*/
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+  h2 {font-size:1.2rem;} /*1rem = 16px*/
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  h2 {font-size:1.6rem;} /*1rem = 16px*/
+}
     </style>
 @endsection
 
 @section('content')
     <div class="container mt-5">
-        <div class="row">
+        <div class="row pt-2">
             <div class="col-lg-9">
                 @foreach ($posts as $post)
                 <div class="box-post">

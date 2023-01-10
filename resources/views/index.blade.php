@@ -9,8 +9,9 @@
         color: #636b6f !important;
     }
     .jumbotron{ 
-        height: 420px;
-        background: linear-gradient(to right, #4dd599, #ffdc34 99%);
+		padding-top:100px;
+        height: 360px;
+        background: linear-gradient(to right, #4dd599,#FFFF00 99%);
     }
     .card img{
         width: 100%;
@@ -84,12 +85,12 @@
                 </div>
 				<div class="row">
 				<div class="mx-auto">
-				  <a href="/blog" class="mt-4 btn btn-info">First Page</a>
-					<a href="/blog?page={{$posts->currentPage() - 1}}" class="mt-4 btn btn-info">Back</a>                    
+				  <a href="/" class="mt-4 btn btn-info">First Page</a>
+					<a href="?page={{$posts->currentPage() - 1}}" class="mt-4 btn btn-info">Back</a>                    
 			   
 
-					<a href="/blog?page={{$posts->currentPage() + 1}}" class="mt-4 btn btn-info">Next</a>
-					<a href="/blog?page={{$posts->lastPage()}}" class="mt-4 btn btn-info">Last Page</a>
+					<a href="?page={{$posts->currentPage() + 1}}" class="mt-4 btn btn-info">Next</a>
+					<a href="?page={{$posts->lastPage()}}" class="mt-4 btn btn-info">Last Page</a>
 				</div>
 				</div>
             </div>
