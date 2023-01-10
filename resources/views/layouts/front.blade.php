@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{{ asset('css/prism.css') }}">
+		<link href="{{ asset('css/root.css') }}" rel="stylesheet">
 		<!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         @yield('style')
@@ -19,7 +20,7 @@
     </head>
     <body>
         <div>
-            <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
+            <nav class="navbar navbar-custom navbar-expand-md navbar-light shadow-sm fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="/">
                         <img src="/images/note_logo.png" alt="Home Note" height="36"> Home Note

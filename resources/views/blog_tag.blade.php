@@ -67,7 +67,7 @@
         
         @section('content')
  
-        <div class="container wrap">
+        <div class="container wrap pt-5">
             <div class="row">
                 <div class="col-lg-9">
                     @foreach ($posts->posts as $post)
