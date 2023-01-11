@@ -4,16 +4,16 @@
 }
 
 .navbar-custom {
-    background-color: #CCCCFF;
+    background-color: #ff5733;
 }/* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color: #800000;
+    color:  #eaeaea ;
 }/* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-    color: #00008B;
+    color:  #eaeaea ;
 }/* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color: #00008B;
+    color:  #eaeaea ;
 }
