@@ -6,7 +6,7 @@
 <style>
     a{
         text-decoration: none !important;
-        color: #636b6f !important;
+        /* color: #636b6f !important; */
     }
     .jumbotron{ 
 		padding-top:100px;

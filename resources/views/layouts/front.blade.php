@@ -20,7 +20,7 @@
     </head>
     <body>
         <div>
-            <nav class="navbar navbar-custom navbar-expand-md navbar-light shadow-sm fixed-top">
+            <nav class="navbar navbar-custom navbar-expand-md navbar-dark shadow-sm fixed-top">
                 <div class="container">
                     <a class="navbar-brand" href="/">
                         <img src="/images/note_logo.png" alt="Home Note" height="36"> Home Note

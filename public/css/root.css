@@ -8,12 +8,12 @@
 }/* change the brand and text color */
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-text {
-    color:  #eaeaea ;
+    color:  #eaeaea;
 }/* change the link color */
 .navbar-custom .navbar-nav .nav-link {
-    color:  #eaeaea ;
+    color:  #eaeaea;
 }/* change the color of active or hovered links */
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
-    color:  #eaeaea ;
+    color:  #eaeaea;
 }
